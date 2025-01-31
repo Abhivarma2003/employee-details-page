@@ -48,6 +48,7 @@ function MainContent({ section }) {
     <div className="main-content">
       {section === "mydetails" && (
         <div className="card-container">
+          {/* Profile Details Card */}
           <Card>
             <div className="profile-container">
               <div className="profile-header">
@@ -60,13 +61,9 @@ function MainContent({ section }) {
                 <div><strong>Birthdate:</strong> 21-01-1988</div>
               </div>
             </div>
-            <div className="contact-info">
-              <h3>Contact Info</h3>
-              <div><strong>Address:</strong> Photo XYZ, APC Appointed City</div>
-              <div><strong>Email:</strong> abc@gmail.com</div>
-              <div><strong>Phone:</strong> 123-456-7890</div>
-            </div>
           </Card>
+
+          {/* Change Password Card */}
           <Card>
             <h3>Change Password</h3>
             <div className="form-group">
@@ -82,6 +79,16 @@ function MainContent({ section }) {
               <input type="password" value={reenterPassword} onChange={(e) => setReenterPassword(e.target.value)} />
             </div>
             <button className="change-password-button" onClick={handlePasswordChange}>Change Password</button>
+          </Card>
+
+          {/* Contact Info Card */}
+          <Card className="contact-info-card">
+            <div className="contact-info">
+              <h3>Contact Info</h3>
+              <div><strong>Address:</strong> Photo XYZ, APC Appointed City</div>
+              <div><strong>Email:</strong> abc@gmail.com</div>
+              <div><strong>Phone:</strong> 123-456-7890</div>
+            </div>
           </Card>
         </div>
       )}
@@ -142,9 +149,9 @@ function MainContent({ section }) {
   );
 }
 
-function Card({ children }) {
+function Card({ children, className }) {
   return (
-    <div className="card">
+    <div className={`card ${className || ''}`}>
       {children}
     </div>
   );
