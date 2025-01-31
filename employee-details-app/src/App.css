@@ -26,6 +26,7 @@
   padding: 10px;
 }
 
+/* Cards Layout */
 .card {
   background-color: white;
   color: black;
@@ -37,17 +38,20 @@
   font-weight: bold;
 }
 
+/* Grid Layout for Profile Details and Change Password Cards */
 .card-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between the cards */
   margin-bottom: 20px;
 }
 
-.card-container .card {
-  width: 45%;
-  margin-bottom: 20px;
+/* Contact Info Card Below */
+.contact-info-card {
+  grid-column: span 2; /* Span across both columns */
 }
 
+/* Profile Section */
 .profile-container {
   display: flex;
   align-items: center;
@@ -74,10 +78,17 @@
   flex: 1;
 }
 
+/* Contact Info */
 .contact-info {
   margin-top: 20px;
 }
 
+.contact-info div {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Horizontal Card Layout */
 .horizontal-card {
   display: flex;
   justify-content: space-between;
@@ -94,6 +105,7 @@
   text-align: left;
 }
 
+/* Company Chart */
 .company-chart {
   background-color: #e9ecef;
   border-radius: 10px;
@@ -101,6 +113,7 @@
   text-align: center;
 }
 
+/* Form Inputs */
 input {
   width: 100%;
   padding: 8px;
@@ -109,6 +122,7 @@ input {
   border: 1px solid #ccc;
 }
 
+/* Change Password Button */
 .change-password-button {
   width: 100%;
   padding: 10px;
@@ -126,6 +140,8 @@ input {
   background-color: #218838;
 }
 
+/* Responsive Design */
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .App {
@@ -141,23 +157,11 @@ input {
   }
 
   .card-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
   }
 
-  .horizontal-card {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .horizontal-card div {
-    width: 14%;
-  }
-
-  .horizontal-card div:nth-child(2),
-  .horizontal-card div:nth-child(4) {
-    text-align: left;
+  .contact-info-card {
+    grid-column: span 2; /* Span across both columns */
   }
 }
 
